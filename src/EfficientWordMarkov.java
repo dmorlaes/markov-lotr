@@ -6,11 +6,11 @@ import java.util.NoSuchElementException;
 public class EfficientWordMarkov extends BaseWordMarkov{
     private Map<WordGram, ArrayList<String>> myMap;
 
-    EfficientWordMarkov(){
+    public EfficientWordMarkov(){
         this(3);
     }
 
-    EfficientWordMarkov(int order) {
+    public EfficientWordMarkov(int order) {
         super(order);
         myMap = new HashMap<>();
     }
