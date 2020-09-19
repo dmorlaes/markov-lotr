@@ -19,11 +19,17 @@ public class EfficientWordMarkov extends BaseWordMarkov{
         myMap.clear();
         int index = 0;
         myWords = text.split("\\s+");
-        while (index + myOrder < myWords.length) {
+        while (index + myOrder - 1 < myWords.length ) {
             WordGram nGram = new WordGram(myWords, index, myOrder);
             ArrayList<String> mapList = new ArrayList<>();
             myMap.putIfAbsent(nGram, mapList);
-            myMap.get(nGram).add(myWords[index + myOrder]);
+            if(myWords.length == myOrder + index) {
+                myMap.get(nGram).add(PSEUDO_EOS);
+            }
+            else {
+                myMap.get(nGram).add(myWords[index + myOrder]);
+            }
+
             index++;
 
         }
