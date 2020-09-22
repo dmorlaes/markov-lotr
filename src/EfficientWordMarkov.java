@@ -14,6 +14,8 @@ public class EfficientWordMarkov extends BaseWordMarkov{
         super(order);
         myMap = new HashMap<>();
     }
+
+    @Override
     public void setTraining(String text) {
         super.setTraining(text);
         myMap.clear();

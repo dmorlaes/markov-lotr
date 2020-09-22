@@ -83,8 +83,8 @@ public class Benchmark {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Starting tests\n");
 		
-		String fileName = "rings.txt";
-		File file = new File("data/"+fileName);
+		String fileName = "data/rings.txt";
+		File file = new File(fileName);
 		double[] data;
 		String source = TextSource.textFromFile(file);
 		int[] sizes = {1000,2000,4000,8000,16000,32000,64000,128000,256000,512000,1024000};
